@@ -52,4 +52,29 @@ contract Test {
         Identity memory identity = userIdentity[_user];
         return (identity.name, identity.phoneNumber, identity.home_address, identity.email, identity.verified);
     }
+
+    // Update user name
+    function updateName(string memory _name) public {
+        require(bytes(_name).length > 0, "Name must not be empty");
+        userIdentity[msg.sender].name = _name;
+        emit IdentityUpdated(msg.sender, "name", _name);
+    }
+
+    // Update phone number
+    function updatePhoneNumber(string memory _phoneNumber) public {
+        userIdentity[msg.sender].phoneNumber = _phoneNumber;
+        emit IdentityUpdated(msg.sender, "phoneNumber", _phoneNumber);
+    }
+
+    // Update home address
+    function updateAddress(string memory _address) public {
+        userIdentity[msg.sender].home_address = _address;
+        emit IdentityUpdated(msg.sender, "home_address", _address);
+    }
+
+    // Update email
+    function updateEmail(string memory _email) public {
+        userIdentity[msg.sender].email = _email;
+        emit IdentityUpdated(msg.sender, "email", _email);
+    }
 }
