@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-contract IdentityManagement {
+contract Test {
     struct Identity {
         string name;
         string phoneNumber;
@@ -16,28 +16,28 @@ contract IdentityManagement {
     event IdentityUpdated(address indexed user, string field, string newValue);
     event IdentityVerified(address indexed user);
 
-    // Create or update user identity
-    function setIdentity(string memory _name, string memory _phoneNumber, string memory _address, string memory _email) public {
-        userIdentity[msg.sender] = Identity(_name, _phoneNumber, _address, _email, false);
-        emit IdentityCreated(msg.sender, _name, _phoneNumber, _address, _email);
+    // Set user name
+    function setName(string memory _name) public {
+        userIdentity[msg.sender].name = _name;
+        emit IdentityUpdated(msg.sender, "name", _name);
     }
 
-    // Update a field in user identity
-    function updateIdentityField(string memory _field, string memory _newValue) public {
-        require(bytes(_newValue).length > 0, "New value must not be empty");
-        require(bytes(userIdentity[msg.sender].name).length > 0, "User identity not found");
-        if (keccak256(abi.encodePacked(_field)) == keccak256(abi.encodePacked("name"))) {
-            userIdentity[msg.sender].name = _newValue;
-        } else if (keccak256(abi.encodePacked(_field)) == keccak256(abi.encodePacked("phoneNumber"))) {
-            userIdentity[msg.sender].phoneNumber = _newValue;
-        } else if (keccak256(abi.encodePacked(_field)) == keccak256(abi.encodePacked("home_address"))) {
-            userIdentity[msg.sender].home_address = _newValue;
-        } else if (keccak256(abi.encodePacked(_field)) == keccak256(abi.encodePacked("email"))) {
-            userIdentity[msg.sender].email = _newValue;
-        } else {
-            revert("Invalid field");
-        }
-        emit IdentityUpdated(msg.sender, _field, _newValue);
+    // Set phone number
+    function setPhoneNumber(string memory _phoneNumber) public {
+        userIdentity[msg.sender].phoneNumber = _phoneNumber;
+        emit IdentityUpdated(msg.sender, "phoneNumber", _phoneNumber);
+    }
+
+    // Set home address
+    function setAddress(string memory _address) public {
+        userIdentity[msg.sender].home_address = _address;
+        emit IdentityUpdated(msg.sender, "home_address", _address);
+    }
+
+    // Set email
+    function setEmail(string memory _email) public {
+        userIdentity[msg.sender].email = _email;
+        emit IdentityUpdated(msg.sender, "email", _email);
     }
 
     // Verify user identity
