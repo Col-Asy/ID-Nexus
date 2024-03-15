@@ -5,14 +5,14 @@ contract IdentityManagement {
     struct Identity {
         string name;
         string phoneNumber;
-        string address;
+        string home_address;
         string email;
         bool verified;
     }
 
     mapping(address => Identity) public userIdentity;
 
-    event IdentityCreated(address indexed user, string name, string phoneNumber, string address, string email);
+    event IdentityCreated(address indexed user, string name, string phoneNumber, string home_address, string email);
     event IdentityUpdated(address indexed user, string field, string newValue);
     event IdentityVerified(address indexed user);
 
@@ -30,8 +30,8 @@ contract IdentityManagement {
             userIdentity[msg.sender].name = _newValue;
         } else if (keccak256(abi.encodePacked(_field)) == keccak256(abi.encodePacked("phoneNumber"))) {
             userIdentity[msg.sender].phoneNumber = _newValue;
-        } else if (keccak256(abi.encodePacked(_field)) == keccak256(abi.encodePacked("address"))) {
-            userIdentity[msg.sender].address = _newValue;
+        } else if (keccak256(abi.encodePacked(_field)) == keccak256(abi.encodePacked("home_address"))) {
+            userIdentity[msg.sender].home_address = _newValue;
         } else if (keccak256(abi.encodePacked(_field)) == keccak256(abi.encodePacked("email"))) {
             userIdentity[msg.sender].email = _newValue;
         } else {
@@ -50,6 +50,6 @@ contract IdentityManagement {
     // Get user identity details
     function getIdentity(address _user) public view returns (string memory name, string memory phoneNumber, string memory _address, string memory email, bool verified) {
         Identity memory identity = userIdentity[_user];
-        return (identity.name, identity.phoneNumber, identity.address, identity.email, identity.verified);
+        return (identity.name, identity.phoneNumber, identity.home_address, identity.email, identity.verified);
     }
 }
