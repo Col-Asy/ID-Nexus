@@ -1,9 +1,7 @@
-// Ensure you have ethers.js installed: npm install ethers
-
 "use client";
 
-import { useState } from "react";
-import { ethers } from "ethers"; // Import ethers.js
+import Image from "next/image";
+
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import {
@@ -16,52 +14,71 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "@/components/ui/alert-dialog";
+} from "@/components/ui/alert-dialog"
 
-// Initialize ethers provider and contract
-const provider = new ethers.providers.JsonRpcProvider();
 const contractAddress = "0xd9145CCE52D386f254917e481eB44e9943F39138";
-const contract = new ethers.Contract(contractAddress, abi, provider);
 
 const Home = () => {
   const router = useRouter();
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-
   const handleButtonClickSignup = () => {
-    // Redirect to the sign-up page
+    // Redirect to the settings page
     router.push("/components/signup");
   };
-
-  const handleButtonClickLogin = async () => {
-    try {
-      // Call your smart contract to verify user credentials
-      const isAuthenticated = await contract.authenticate(username, password);
-      if (isAuthenticated) {
-        // Redirect to the dashboard page
-        router.push("/components/dashboard");
-      } else {
-        // Display an error message for invalid credentials
-        alert("Invalid username or password");
-      }
-    } catch (error) {
-      console.error("Error:", error);
-      // Handle error
-    }
-  };
-
-  const handleButtonClickForget = () => {
-    // Show a confirmation dialog
-    if (confirm("Are you sure you want to forget your password?")) {
-      // Implement password reset logic
-      // For example, navigate to a password reset page
-      router.push("/components/reset-password");
-    }
+  const handleButtonClickLogin = () => {
+    // Redirect to the settings page
+    router.push("/components/dashboard");
   };
 
   return (
     <div className="flex w-screen h-screen">
-      {/* Your UI code */}
+      <div className="bg-[rgb(49,49,49)] justify-self-start w-1/2">
+        <div className="flex flex-col justify-center items-center h-screen">
+          <img src="login.png" alt="LOGIN" className="w-4/6" />{" "}
+          <h1 className="text-3xl font-bold">ID Nexus: Own Your</h1>
+          <h1 className="text-3xl font-bold">Identity</h1>
+          <h3>Control your personal data securely and privately</h3>
+        </div>
+      </div>
+      <div className="bg-[rgb(22,22,22)]justify-self-end w-1/2">
+        <div className="flex flex-col gap-4 h-screen justify-center items-center">
+          <h2 className="text-4xl self-start ml-44">Log In</h2>
+          <h3>Username</h3>
+          <input
+            type="text"
+            placeholder="Username"
+            required
+            className="max-w-96 text-white"
+          />
+          <h3>Password</h3>
+          <input
+            type="password"
+            placeholder="Password"
+            required
+            className="max-w-96 text-white"
+          />
+          <Button onClick={handleButtonClickLogin} className="min-w-96" variant="secondary">Login</Button>
+          <div className="sub-buttons">
+            <AlertDialog>
+              <AlertDialogTrigger asChild>
+                <Button className="min-w-40 me-6 bg-[rgba(27,26,26,0.54)]">Forget</Button>
+              </AlertDialogTrigger>
+              <AlertDialogContent>
+                <AlertDialogHeader>
+                  <AlertDialogTitle className="text-black">Are you absolutely sure?</AlertDialogTitle>
+                  <AlertDialogDescription>
+                    This action cannot be undone. This will permanently delete your account and remove your data from our servers.
+                  </AlertDialogDescription>
+                </AlertDialogHeader>
+                <AlertDialogFooter>
+                  <AlertDialogCancel>Cancel</AlertDialogCancel>
+                  <AlertDialogAction>Continue</AlertDialogAction>
+                </AlertDialogFooter>
+              </AlertDialogContent>
+            </AlertDialog>
+            <Button onClick={handleButtonClickSignup} className="min-w-40 ms-6 bg-[rgba(27,26,26,0.54)]">Sign Up</Button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
