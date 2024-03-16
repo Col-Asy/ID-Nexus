@@ -80,6 +80,9 @@ body {
   font-family: Arial, sans-serif;
   background-color: #131111;
 }
+p{
+  color: white;
+}
 .form {
   max-width: 400px;
   background-color: #000000;

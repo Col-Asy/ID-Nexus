@@ -20,24 +20,31 @@ const Dashboard = () => {
           <div className="bg-[rgb(22,22,22)]justify-self-end w-1/2">
             <div className="flex flex-col gap-4 h-screen justify-center items-center">
               <h2 className="text-4xl self-start ml-44">Details</h2>
-              <h3>Username</h3>
-              <input
-                type="text"
-                placeholder="Username"
-                required
-                className="max-w-96 text-white"
-              />
-              <h3>Password</h3>
-              <input
-                type="password"
-                placeholder="Password"
-                required
-                className="max-w-96 text-white"
-              />
-              <Button className="min-w-96" variant="secondary">Login</Button>
-              <div className="sub-buttons">
-                <Button  className="min-w-40 ms-6 bg-[rgba(27,26,26,0.54)]">Sign Up</Button>
+              <div className="flex">
+                <h3>Username</h3>
+                <p className="ps-2">Username</p>
               </div>
+              <div className="flex">
+                <h3>Number</h3>
+                <p className="ps-2">Number</p>
+              </div>
+              <div className="flex">
+                <h3>Email</h3>
+                <p className="ps-2">Email</p>
+              </div>
+              <div className="flex">
+                <h3>Address</h3>
+                <p className="ps-2">Address</p>
+              </div>
+              <div className="flex">
+                <h3>Aadhar</h3>
+                <p className="ps-2">Aadhar</p>
+              </div>
+              <div className="flex">
+                <h3>Pan</h3>
+                <p className="ps-2">Pan</p>
+              </div>
+              <Button className="min-w-96" variant="secondary">Change</Button>
             </div>
           </div>
         </div>
