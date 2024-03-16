@@ -11,27 +11,27 @@ const Dashboard = () => {
             <div className="flex flex-col gap-12 h-screen justify-center items-center">
               <h2 className="text-4xl self-start ml-44">Details</h2>
               <div className="flex">
-                <h3>Username</h3>
+                <h3>Username :</h3>
                 <p className="ps-2">Username</p>
               </div>
               <div className="flex">
-                <h3>Number</h3>
+                <h3>Number :</h3>
                 <p className="ps-2">Number</p>
               </div>
               <div className="flex">
-                <h3>Email</h3>
+                <h3>Email :</h3>
                 <p className="ps-2">Email</p>
               </div>
               <div className="flex">
-                <h3>Address</h3>
+                <h3>Address :</h3>
                 <p className="ps-2">Address</p>
               </div>
               <div className="flex">
-                <h3>Aadhar</h3>
+                <h3>Aadhar :</h3>
                 <p className="ps-2">Aadhar</p>
               </div>
               <div className="flex">
-                <h3>Pan</h3>
+                <h3>Pan :</h3>
                 <p className="ps-2">Pan</p>
               </div>
               <Button className="min-w-96" variant="secondary">Change</Button>
