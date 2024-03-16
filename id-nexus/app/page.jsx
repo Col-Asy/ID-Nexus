@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+// import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import {
@@ -46,14 +46,14 @@ const Home = () => {
             type="text"
             placeholder="Username"
             required
-            className="max-w-96"
+            className="max-w-96 text-white"
           />
           <h3>Password</h3>
           <input
             type="password"
             placeholder="Password"
             required
-            className="max-w-96"
+            className="max-w-96 text-white"
           />
           <Button onClick={handleButtonClickLogin} className="min-w-96" variant="secondary">Login</Button>
           <div className="sub-buttons">
