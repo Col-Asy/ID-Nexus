@@ -11,7 +11,7 @@ const Dashboard = () => {
         <div className="flex w-screen h-screen">
           <div className="bg-[rgb(49,49,49)] justify-self-start w-1/2">
             <div className="flex flex-col justify-center items-center h-screen">
-              <img src="user.png" alt="USER" className="w-4/6" />{" "}
+              <img src="../dashboard.png" alt="USER" className="w-4/6" />{" "}
               <h1 className="text-3xl font-bold">ID Nexus: Own Your</h1>
               <h1 className="text-3xl font-bold">Identity</h1>
               <h3>Control your personal data securely and privately</h3>
