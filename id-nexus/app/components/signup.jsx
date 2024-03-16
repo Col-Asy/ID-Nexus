@@ -1,7 +1,9 @@
 'use client';
 
 import Image from "next/image";
-import { useRouter } from 'next/navigation';
+import Settings from "./components/settings";
+import { useRouter } from "next/navigation";
+import { Button } from "@/components/ui/button";
 
 
 const Signup = () => {
@@ -12,36 +14,79 @@ const Signup = () => {
   };
 
   return (
-    <div className="content">
-      <div>
-        <h2>ID</h2>
-        <h3>self-sovereign</h3>
+    <div className="flex w-screen h-screen">
+      <div className="bg-[rgb(49,49,49)] justify-self-start w-1/2">
+        <div className="flex flex-col justify-center items-center h-screen">
+          <img src="login.png" alt="LOGIN" className="w-4/6" />{" "}
+          <h1 className="text-3xl font-bold">ID Nexus: Own Your</h1>
+          <h1 className="text-3xl font-bold">Identity</h1>
+          <h3>Control your personal data securely and privately</h3>
+        </div>
       </div>
-      <div>
-        <img src="login.png" alt="LOGIN" />
-        <h1>ID Nexus: Own Your Identity</h1>
-        <h3>Control your personal data securely and privately</h3>
-      </div>
-    
-      <div className="form">
-        <h2>Login</h2>
-        <form>
-          <input type="text" placeholder="Username" required />
+      <div className="bg-[rgb(22,22,22)]justify-self-end w-1/2">
+        <div className="flex flex-col gap-4 h-screen justify-center items-center">
+          <h2 className="text-4xl self-start ml-44">Sign In</h2>
+          <h3>Full Name</h3>
+          <input
+            type="text"
+            placeholder="Full Name"
+            required
+            className="max-w-96"
+          />
+          <h3>Address</h3>
+          <input
+            type="text"
+            placeholder="Address"
+            required
+            className="max-w-96"
+          />
+          <h3>Phone Number</h3>
+          <input
+            type="number"
+            placeholder="Phone Number"
+            required
+            className="max-w-96"
+          />
+          <h3>Aadhar Number</h3>
+          <input
+            type="number"
+            placeholder="Aadhar Number"
+            required
+            className="max-w-96"
+          />
+          <h3>Pan Number</h3>
+          <input
+            type="text"
+            placeholder="Pan Number"
+            required
+            className="max-w-96"
+          />
+          <h3>Username</h3>
+          <input
+            type="text"
+            placeholder="Username"
+            required
+            className="max-w-96"
+          />
           <h3>Password</h3>
-          <input type="password" placeholder="Password" required />
-          <input type="submit" value="Login" />
-        </form>
-        <div className="bottom-button">
-          <div className="forgot_password">
-            <button>Forget Password</button>
-          </div>
-          <div className="signin-button">
-            <button onClick={handleButtonClickSignin}>Sign Up</button>
-          </div>
+          <input
+            type="password"
+            placeholder="Password"
+            required
+            className="max-w-96"
+          />
+          <h3>Confirm Password</h3>
+          <input
+            type="password"
+            placeholder="Confirm Password"
+            required
+            className="max-w-96"
+          />
+          <Button onClick={handleButtonClickSignin}>Sign In</Button>
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default Signup;
