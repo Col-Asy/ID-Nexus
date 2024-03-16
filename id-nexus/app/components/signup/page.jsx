@@ -57,51 +57,51 @@ const Signup = () => {
             type="text"
             placeholder="Full Name"
             required
-            className="max-w-96"
+            className="max-w-96 text-white"
           />
           <h3>Phone Number</h3>
           <input
             type="text"
             placeholder="Phone Number"
             required
-            className="max-w-96"
+            className="max-w-96 text-white"
           />
           <h3>Aadhar Number</h3>
           <input
             type="text"
             placeholder="Aadhar Number"
             required
-            className="max-w-96"
+            className="max-w-96 text-white"
           />
           <h3>Pan Number</h3>
           <input
             type="text"
             placeholder="Pan Number"
             required
-            className="max-w-96"
+            className="max-w-96 text-white"
           />
           <h3>Address</h3>
           <input
             type="text"
             placeholder="Address"
             required
-            className="max-w-96"
+            className="max-w-96 text-white"
           />
           <h3>Password</h3>
           <input
             type="password"
             placeholder="Password"
             required
-            className="max-w-96"
+            className="max-w-96 text-white"
           />
           <h3>Confirm Password</h3>
           <input
             type="password"
             placeholder="Confirm Password"
             required
-            className="max-w-96"
+            className="max-w-96 text-white"
           />
-          <Button onClick={handleButtonClickSignup}>Sign Up</Button>
+          <Button onClick={handleButtonClickSignup}><a href="http://localhost:3000/">Sign Up</a></Button>
         </div>
       </div>
       <div className="bg-[rgb(49,49,49)] justify-self-start w-1/3">
