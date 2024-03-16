@@ -1,0 +1,33 @@
+{
+    "users": [
+      {
+        "id": 1,
+        "fullName": "John Doe",
+        "phoneNumber": "1234567890",
+        "aadharNumber": "123456789012",
+        "panNumber": "ABCDE1234F",
+        "address": "123 Main St, City",
+        "password": "my-secret-password"
+      },
+      {
+        "id": 2,
+        "fullName": "Benny Shaw",
+        "phoneNumber": "8716943587",
+        "aadharNumber": "366815463547",
+        "panNumber": "HGEGSHFHFGWGSHD",
+        "address": "23 Downing st.",
+        "password": "admin"
+      },
+
+      {
+        "id": 3,
+        "fullName": "Jennifer P.",
+        "phoneNumber": "474637264672",
+        "aadharNumber": "8752554136985",
+        "panNumber": "RWDHFHEBDHFHF",
+        "address": "18th wellington st.",
+        "password": "root"
+      }
+    ]
+  }
+  
