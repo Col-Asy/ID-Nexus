@@ -5,8 +5,6 @@ import { Button } from "@/components/ui/button";
 
 
 const Dashboard = () => {
-
-
     return (
         <div className="flex w-screen h-screen">
           <div className="bg-[rgb(22,22,22)]justify-self-end w-2/3">
