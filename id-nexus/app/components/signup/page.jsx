@@ -1,15 +1,50 @@
 'use client';
 
 import Image from "next/image";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 
 
 const Signup = () => {
   const router = useRouter();
-  const handleButtonClickSignup = () => {
-    // Redirect to the settings page
-    router.push('/components/settings');
+
+  const [formData, setFormData] = useState({
+    fullName: "",
+    phoneNumber: "",
+    aadharNumber: "",
+    panNumber: "",
+    address: "",
+    password: "",
+    confirmPassword: "",
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleButtonClickSignup = async () => {
+    try {
+      // Call your contract's signup function with formData
+      Example: await contract.registerUser(
+          formData.fullName,
+          formData.phoneNumber,
+          formData.aadharNumber,
+          formData.panNumber,
+          formData.address,
+          formData.password
+        );
+      
+      // Redirect to the login page after successful signup
+      router.push("/dashboard");
+    } catch (error) {
+      console.error("Signup error:", error);
+      // Handle signup error
+    }
   };
 
   return (
