@@ -8,7 +8,7 @@ const Signup = () => {
   const router = useRouter();
   const handleButtonClickSignin = () => {
     // Redirect to the settings page
-    router.push('/components/signup');
+    router.push('/components/settings');
   };
 
   return (
