@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 
 const Signup = () => {
   const router = useRouter();
-  const handleButtonClickSignin = () => {
+  const handleButtonClickSignup = () => {
     // Redirect to the settings page
     router.push('/components/signup');
   };
@@ -25,7 +25,7 @@ const Signup = () => {
       </div>
       <div className="bg-[rgb(22,22,22)]justify-self-end w-1/2">
         <div className="flex flex-col gap-4 h-screen justify-center items-center">
-          <h2 className="text-4xl self-start ml-44">Sign In</h2>
+          <h2 className="text-4xl self-start ml-44">Sign Up</h2>
           <h3>Full Name</h3>
           <input
             type="text"
@@ -82,7 +82,7 @@ const Signup = () => {
             required
             className="max-w-96"
           />
-          <Button onClick={handleButtonClickSignin}>Sign In</Button>
+          <Button onClick={handleButtonClickSignup}>Sign Up</Button>
         </div>
       </div>
     </div>
