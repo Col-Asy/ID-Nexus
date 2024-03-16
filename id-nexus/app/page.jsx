@@ -4,16 +4,27 @@ import Image from "next/image";
 import Settings from "./components/settings";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog"
 
 const Home = () => {
   const router = useRouter();
-  const handleButtonClickSignin = () => {
+  const handleButtonClickSignup = () => {
     // Redirect to the settings page
     router.push("/components/signup");
   };
   const handleButtonClickLogin = () => {
     // Redirect to the settings page
-    router.push("/components/signup");
+    router.push("/components/dashboard");
   };
 
   return (
@@ -43,7 +54,27 @@ const Home = () => {
             required
             className="max-w-96"
           />
-          <Button onClick={handleButtonClickLogin}>Login</Button>
+          <Button onClick={handleButtonClickLogin} className="min-w-96" variant="secondary">Login</Button>
+          <div className="sub-buttons">
+            <AlertDialog>
+              <AlertDialogTrigger asChild>
+                <Button className="min-w-40 me-6 bg-[rgba(27,26,26,0.54)]">Forget</Button>
+              </AlertDialogTrigger>
+              <AlertDialogContent>
+                <AlertDialogHeader>
+                  <AlertDialogTitle className="text-black">Are you absolutely sure?</AlertDialogTitle>
+                  <AlertDialogDescription>
+                    This action cannot be undone. This will permanently delete your account and remove your data from our servers.
+                  </AlertDialogDescription>
+                </AlertDialogHeader>
+                <AlertDialogFooter>
+                  <AlertDialogCancel>Cancel</AlertDialogCancel>
+                  <AlertDialogAction>Continue</AlertDialogAction>
+                </AlertDialogFooter>
+              </AlertDialogContent>
+            </AlertDialog>
+            <Button onClick={handleButtonClickSignup} className="min-w-40 ms-6 bg-[rgba(27,26,26,0.54)]">Sign Up</Button>
+          </div>
         </div>
       </div>
     </div>
